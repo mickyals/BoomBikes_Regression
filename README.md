@@ -11,11 +11,11 @@
 * Libraries used - Pandas, Numpy, Matplotlib.pyplot, Seaborn, Statsmodels, Sci-kit Learn
 
 ## Conclusions
-- 1) Using manual and automatic feature selection (RFE), I was able to drop the number of initial features from 33 to 12 with only a minute drop in R-squared and a significant rise in the F statistic and significant drop in AIC while having all predictor p-values fall to near 0. This means the model is significantly less complex
+ 1) Using manual and automatic feature selection (RFE), I was able to drop the number of initial features from 33 to 12 with only a minute drop in R-squared and a significant rise in the F statistic and significant drop in AIC while having all predictor p-values fall to near 0. This means the model is significantly less complex
 
-- 2) On the training set, the model scored an R-squared value of 84.7% and on our test set, this score was 82.15%. This indicates the model does a very good job of predicting demand in the dataset.
+ 2) On the training set, the model scored an R-squared value of 84.7% and on our test set, this score was 82.15%. This indicates the model does a very good job of predicting demand in the dataset.
 
-- 3) The equation for the best fit line is:
+ 3) The equation for the best fit line is:
 
 𝑐𝑛𝑡=0.0614×𝑆𝑎𝑡+0.0486×𝐴𝑢𝑔𝑢𝑠𝑡+0.1183×𝑆𝑒𝑝𝑡𝑒𝑚𝑏𝑒𝑟+0.0598×𝑂𝑐𝑡𝑜𝑏𝑒𝑟−0.0918×𝑠𝑢𝑚𝑚𝑒𝑟−0.133×𝑤𝑖𝑛𝑡𝑒𝑟−0.2531×𝐿𝑖𝑔ℎ𝑡𝑃𝑟𝑒𝑐𝑖𝑝−0.0609×𝑀𝑖𝑠𝑡/𝐶𝑙𝑜𝑢𝑑𝑦+0.2309×𝑦𝑟+0.0522×𝑤𝑜𝑟𝑘𝑖𝑛𝑔𝑑𝑎𝑦+0.4715×𝑡𝑒𝑚𝑝−0.1538×ℎ𝑢𝑚−0.1875×𝑤𝑖𝑛𝑑𝑠𝑝𝑒𝑒𝑑
 
