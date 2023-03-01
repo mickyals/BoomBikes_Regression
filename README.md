@@ -18,6 +18,7 @@
 - 3) The equation for the best fit line is:
 
 𝑐𝑛𝑡=0.0614×𝑆𝑎𝑡+0.0486×𝐴𝑢𝑔𝑢𝑠𝑡+0.1183×𝑆𝑒𝑝𝑡𝑒𝑚𝑏𝑒𝑟+0.0598×𝑂𝑐𝑡𝑜𝑏𝑒𝑟−0.0918×𝑠𝑢𝑚𝑚𝑒𝑟−0.133×𝑤𝑖𝑛𝑡𝑒𝑟−0.2531×𝐿𝑖𝑔ℎ𝑡𝑃𝑟𝑒𝑐𝑖𝑝−0.0609×𝑀𝑖𝑠𝑡/𝐶𝑙𝑜𝑢𝑑𝑦+0.2309×𝑦𝑟+0.0522×𝑤𝑜𝑟𝑘𝑖𝑛𝑔𝑑𝑎𝑦+0.4715×𝑡𝑒𝑚𝑝−0.1538×ℎ𝑢𝑚−0.1875×𝑤𝑖𝑛𝑑𝑠𝑝𝑒𝑒𝑑
+
 From the coeefficients, we can see that temperature, yr have the largest impact in increasing demand while Light_Precip and windspeed and hum act to against demand. Therefore, we can conclude that days with higher temperatures in 2019 with lower humidity, windspeed and humidity will be the days where demand is highest. If the day falls on a Saturday in Aug/Sep or Oct then demand was highest.
 
 Assuming this holds true in post covid, we can assume that the factors which will increase demand are those days matching the aforementioned variables. Of note, is that while yr is significant within this model, it can not be used to model future demand.
