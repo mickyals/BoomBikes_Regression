@@ -23,10 +23,10 @@ From the coeefficients, we can see that temperature, yr have the largest impact 
 
 Assuming this holds true in post covid, we can assume that the factors which will increase demand are those days matching the aforementioned variables. Of note, is that while yr is significant within this model, it can not be used to model future demand.
 
-- Recommendations for BoomBike
-Demand increases during the late summer (Aug) and early Autumn (Sep,Oct) these are the times of year when demand will be hightest
-Saturdays will have the highest demand of any day in the week BUT days when more persons are not home i.e working days will also have more demand
-demand is hindered by colder temperatures therefore winter will see the lowest demand, high winds and humidity also limit demand
+### Recommendations for BoomBike
+- Demand increases during the late summer (Aug) and early Autumn (Sep,Oct) these are the times of year when demand will be hightest
+- Saturdays will have the highest demand of any day in the week BUT days when more persons are not home i.e working days will also have more demand
+- Demand is hindered by colder temperatures therefore winter will see the lowest demand, high winds and humidity also limit demand
 
 # Acknowledgements
 
