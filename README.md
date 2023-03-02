@@ -6,6 +6,7 @@
 * day.csv - dataset
 * BoomBikes_Regression_Model_Mickell_Als.ipnb - notebook
 * Model_Results.md - numerical summary of results
+* Linear_Regression_Subjective_Questions_Mickell_Als.pdf - pdf of questions and answers
 
 ## General Information
 * Multiple Linear Regression
