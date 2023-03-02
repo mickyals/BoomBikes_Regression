@@ -5,6 +5,7 @@
 * data_dictionary.txt - data dictionary
 * day.csv - dataset
 * BoomBikes_Regression_Model_Mickell_Als.ipnb - notebook
+* Model_Results.md - numerical summary of results
 
 ## General Information
 * Multiple Linear Regression
@@ -13,20 +14,38 @@
 ## Conclusions
  1) Using manual and automatic feature selection (RFE), I was able to drop the number of initial features from 33 to 12 with only a minute drop in R-squared and a significant rise in the F statistic and significant drop in AIC while having all predictor p-values fall to near 0. This means the model is significantly less complex
 
- 2) On the training set, the model scored an R-squared value of 84.7% and on our test set, this score was 82.15%. This indicates the model does a very good job of predicting demand in the dataset.
+2) On the training set, the model scored an R-squared value of 84.4% and on our test set, this score was 82.4%. This indicates the model does a very good job of predicting demand in the dataset.
+ 
 
- 3) The equation for the best fit line is:
+3) The equation for the best fit line is:
 
-𝑐𝑛𝑡=0.0614×𝑆𝑎𝑡+0.0486×𝐴𝑢𝑔𝑢𝑠𝑡+0.1183×𝑆𝑒𝑝𝑡𝑒𝑚𝑏𝑒𝑟+0.0598×𝑂𝑐𝑡𝑜𝑏𝑒𝑟−0.0918×𝑠𝑢𝑚𝑚𝑒𝑟−0.133×𝑤𝑖𝑛𝑡𝑒𝑟−0.2531×𝐿𝑖𝑔ℎ𝑡𝑃𝑟𝑒𝑐𝑖𝑝−0.0609×𝑀𝑖𝑠𝑡/𝐶𝑙𝑜𝑢𝑑𝑦+0.2309×𝑦𝑟+0.0522×𝑤𝑜𝑟𝑘𝑖𝑛𝑔𝑑𝑎𝑦+0.4715×𝑡𝑒𝑚𝑝−0.1538×ℎ𝑢𝑚−0.1875×𝑤𝑖𝑛𝑑𝑠𝑝𝑒𝑒𝑑
+ $ cnt = 0.3191 + 0.0633	\times Sat + 0.1003 \times	September + 0.0590	\times October - 0.0695 \times summer - 0.1340 \times winter - 0.2569 \times LightPrecip - 0.0599 \times Mist/Cloudy + 0.2319 \times yr + 0.0534 \times workingday + 0.4681	\times temp - 0.1457 \times hum - 0.1873 \times windspeed $
+ 
+Based on the absolute values of the coeffients the following are the features with the most impact and their effect
 
-From the coeefficients, we can see that temperature, yr have the largest impact in increasing demand while Light_Precip and windspeed and hum act to against demand. Therefore, we can conclude that days with higher temperatures in 2019 with lower humidity, windspeed and humidity will be the days where demand is highest. If the day falls on a Saturday in Aug/Sep or Oct then demand was highest.
+|Position|Feature      | Coef   | Impact  |
+|--------|-------------|--------|---------|
+|   1    | temp        | 0.4681 | Increase|
+|   2    | Light_Precip| -0.2569| Decrease|
+|   3    | yr          |  0.2319| Increase|
+|   4    | windspeed   | -0.1873| Decrease|
+|   5    | hum         | -0.1457| Decrease|
+|   6    | winter      | -0.134 | Decrease|
+|   7    | September   | 0.1003 | Increase|
+|   8    | summer      | -0.0695| Decrease|
+|   9    | Sat         | 0.0633 | Increase|
+|   10   | Mist/Cloudy | -0.0599| Decrease|
+|   11   | October     | 0.059  | Increase|
+|   12   | workingday  | 0.0534 | Increase|
 
-Assuming this holds true in post covid, we can assume that the factors which will increase demand are those days matching the aforementioned variables. Of note, is that while yr is significant within this model, it can not be used to model future demand.
+ 
+#### Recommendations for BoomBike
 
-### Recommendations for BoomBike
-- Demand increases during the late summer (Aug) and early Autumn (Sep,Oct) these are the times of year when demand will be hightest
-- Saturdays will have the highest demand of any day in the week BUT days when more persons are not home i.e working days will also have more demand
-- Demand is hindered by colder temperatures therefore winter will see the lowest demand, high winds and humidity also limit demand
+Based on the available data, we can see that having a higher temperatures increases demand more so than all other features while Light_Precipe decreases more so than other features. That being said, the yr variable clearly indicates that 2019 was linked to higher demand for services. 
+
+- We can expect higher demand in summer due to its higher temperatures. It is  likely the summer variable itself is linked to a decrease in usage not due to temperature but due to summer having a higher chance of light to heavy shower. In addition to this, we can also expect demand to be higher on days when persons are working and Saturdays likely due to persons taking the bike to work and using the bike for trips on Saturdays. 
+
+For example warm Saturdays in September with clear skies, low humidity and calm winds in 2019 would have the highest demand for bikes
 
 # Acknowledgements
 
