@@ -19,7 +19,7 @@
 
 3) The equation for the best fit line is:
 
- $ cnt = 0.3191 + 0.0633	\times Sat + 0.1003 \times	September + 0.0590	\times October - 0.0695 \times summer - 0.1340 \times winter - 0.2569 \times LightPrecip - 0.0599 \times Mist/Cloudy + 0.2319 \times yr + 0.0534 \times workingday + 0.4681	\times temp - 0.1457 \times hum - 0.1873 \times windspeed $
+ 𝑐𝑛𝑡=0.3191+0.0633×𝑆𝑎𝑡+0.1003×𝑆𝑒𝑝𝑡𝑒𝑚𝑏𝑒𝑟+0.0590×𝑂𝑐𝑡𝑜𝑏𝑒𝑟−0.0695×𝑠𝑢𝑚𝑚𝑒𝑟−0.1340×𝑤𝑖𝑛𝑡𝑒𝑟−0.2569×𝐿𝑖𝑔ℎ𝑡𝑃𝑟𝑒𝑐𝑖𝑝−0.0599×𝑀𝑖𝑠𝑡/𝐶𝑙𝑜𝑢𝑑𝑦+0.2319×𝑦𝑟+0.0534×𝑤𝑜𝑟𝑘𝑖𝑛𝑔𝑑𝑎𝑦+0.4681×𝑡𝑒𝑚𝑝−0.1457×ℎ𝑢𝑚−0.1873×𝑤𝑖𝑛𝑑𝑠𝑝𝑒𝑒𝑑
  
 Based on the absolute values of the coeffients the following are the features with the most impact and their effect
 
