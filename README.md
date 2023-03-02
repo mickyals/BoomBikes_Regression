@@ -8,7 +8,7 @@
 
 ## General Information
 * Multiple Linear Regression
-* Libraries used - Pandas, Numpy, Matplotlib.pyplot, Seaborn, Statsmodels, Scikit-Learn
+* Libraries used - Pandas, Numpy, Matplotlib.pyplot, Seaborn, Statsmodels, Scikit-Learn, SciPy
 
 ## Conclusions
  1) Using manual and automatic feature selection (RFE), I was able to drop the number of initial features from 33 to 12 with only a minute drop in R-squared and a significant rise in the F statistic and significant drop in AIC while having all predictor p-values fall to near 0. This means the model is significantly less complex
