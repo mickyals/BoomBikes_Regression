@@ -13,40 +13,35 @@
 * Libraries used - Pandas, Numpy, Matplotlib.pyplot, Seaborn, Statsmodels, Scikit-Learn, SciPy
 
 ## Conclusions
- 1) Using manual and automatic feature selection (RFE), I was able to drop the number of initial features from 33 to 12 with only a minute drop in R-squared and a significant rise in the F statistic and significant drop in AIC while having all predictor p-values fall to near 0. This means the model is significantly less complex
+ Based on the business objective and linear regression best practice - the model that should be selected should be able to explain most of the variability using the least number of features, with no multicollinearity, having a residual mean of 0, show homoscedasticity for the errors and show normality in the distribution of the errors. While all three models are not perfect, I believe model 13 is the best model. It retains a test set r2 of nearly 82%, while having the lowest residual mean value, the lowest Cond No, indicating little multicollinearity. was to project demand then a more complex model could be used such as Model 12 or Model 10. Our goal was prediction and thus the driving variables matter more.
 
-2) On the training set, the model scored an R-squared value of 84.4% and on our test set, this score was 82.4%. This indicates the model does a very good job of predicting demand in the dataset.
- 
+1) Using manual and automatic feature selection (RFE), I was able to drop the number of initial features from 33 to 12 then manual selection to drop the features to 10 with only a minute drop in R-squared and a significant rise in the F statistic and significant drop in AIC while having all predictor p-values fall to near 0. This means the model is significantly less complex
+
+2) On the training set, the model scored an R-squared value of 83.3% and on our test set the score was 81.7%. This indicates the model does a very good job of predicting demand in the dataset.
 
 3) The equation for the best fit line is:
 
- 𝑐𝑛𝑡=0.3191+0.0633×𝑆𝑎𝑡+0.1003×𝑆𝑒𝑝𝑡𝑒𝑚𝑏𝑒𝑟+0.0590×𝑂𝑐𝑡𝑜𝑏𝑒𝑟−0.0695×𝑠𝑢𝑚𝑚𝑒𝑟−0.1340×𝑤𝑖𝑛𝑡𝑒𝑟−0.2569×𝐿𝑖𝑔ℎ𝑡𝑃𝑟𝑒𝑐𝑖𝑝−0.0599×𝑀𝑖𝑠𝑡/𝐶𝑙𝑜𝑢𝑑𝑦+0.2319×𝑦𝑟+0.0534×𝑤𝑜𝑟𝑘𝑖𝑛𝑔𝑑𝑎𝑦+0.4681×𝑡𝑒𝑚𝑝−0.1457×ℎ𝑢𝑚−0.1873×𝑤𝑖𝑛𝑑𝑠𝑝𝑒𝑒𝑑
- 
+𝑐𝑛𝑡 = 0.2597 + 0.3577(𝑡𝑒𝑚𝑝) − 0.3004(𝐿𝑖𝑔ℎ𝑡_𝑃𝑟𝑒𝑐𝑖𝑝) + 0.2369(𝑦𝑟) − 0.1467(𝑤𝑖𝑛𝑑𝑠𝑝𝑒𝑒𝑑)  − 0.1402(𝑤𝑖𝑛𝑡𝑒𝑟) − 0.0822(𝑀𝑖𝑠𝑡/𝐶𝑙𝑜𝑢𝑑𝑦) + 0.0729(𝑆𝑒𝑝𝑡𝑒𝑚𝑏𝑒𝑟) + 0.0666(𝑆𝑎𝑡) + 0.0663(𝑂𝑐𝑡𝑜𝑏𝑒𝑟) + 0.0557(𝑤𝑜𝑟𝑘𝑖𝑛𝑔𝑑𝑎𝑦)
+
 Based on the absolute values of the coeffients the following are the features with the most impact and their effect
 
 |Position|Feature      | Coef   | Impact  |
 |--------|-------------|--------|---------|
-|   1    | temp        | 0.4681 | Increase|
-|   2    | Light_Precip| -0.2569| Decrease|
-|   3    | yr          |  0.2319| Increase|
-|   4    | windspeed   | -0.1873| Decrease|
-|   5    | hum         | -0.1457| Decrease|
-|   6    | winter      | -0.134 | Decrease|
-|   7    | September   | 0.1003 | Increase|
-|   8    | summer      | -0.0695| Decrease|
-|   9    | Sat         | 0.0633 | Increase|
-|   10   | Mist/Cloudy | -0.0599| Decrease|
-|   11   | October     | 0.059  | Increase|
-|   12   | workingday  | 0.0534 | Increase|
+|   1    | temp        |  0.3577| Increase|
+|   2    | Light_Precip| -0.3004| Decrease|
+|   3    | yr          |  0.2369| Increase|
+|   4    | windspeed   | -0.1467| Decrease|
+|   5    | winter      | -0.1402| Decrease|
+|   6    | Mist/Cloudy | -0.0822| Decrease|
+|   7    | September   |  0.0729| Increase|
+|   8    | Sat         |  0.0666| Increase|
+|   9    | October     |  0.0663| Increase|
+|   10   | workingday  |  0.0557| Increase|
 
- 
 #### Recommendations for BoomBike
+Based on the available data, we can see that having a higher temperatures increases demand more so than all other features while Light_Precip decreases more so than other features. That being said, the yr variable clearly indicates that 2019 was linked to higher demand for services.
 
-Based on the available data, we can see that having a higher temperatures increases demand more so than all other features while Light_Precipe decreases more so than other features. That being said, the yr variable clearly indicates that 2019 was linked to higher demand for services. 
-
-- We can expect higher demand in summer due to its higher temperatures. It is  likely the summer variable itself is linked to a decrease in usage not due to temperature but due to summer having a higher chance of light to heavy shower. In addition to this, we can also expect demand to be higher on days when persons are working and Saturdays likely due to persons taking the bike to work and using the bike for trips on Saturdays. 
-
-For example warm Saturdays in September with clear skies, low humidity and calm winds in 2019 would have the highest demand for bikes
+Days with the most demand would be warm Saturdays in September, with sunny skies and light winds in 2019.
 
 # Acknowledgements
 
