@@ -5,7 +5,7 @@
 * data_dictionary.txt - data dictionary
 * day.csv - dataset
 * BoomBikes_Regression_Model_Mickell_Als.ipnb - notebook
-* Model_Results.md - numerical summary of results
+* Model_Results.md - OLS Regression Outputs For Best Performing Models
 * Linear_Regression_Subjective_Questions_Mickell_Als.pdf - pdf of questions and answers
 
 ## General Information
